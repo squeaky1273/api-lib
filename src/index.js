@@ -36,11 +36,12 @@ async function getWeather(zip, apiKey, units='imperial') {
         return err
     }
             
-    
     // return fetch(path).then(res => res.json())      // connect to server recieve response
       
   }
 
 export {
-    getWeather
+    getWeatherByZip,
+    getWeatherByCity,
+    getWeatherByGeo
 }

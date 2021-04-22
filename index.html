@@ -90,7 +90,7 @@
     </div>
 
     <script type="module">
-      import { getWeather } from './src/index.js'
+      import { getWeatherByZip } from './src/index.js'
       // ------------------------------------------------------
       // Developer Code
 
@@ -109,9 +109,9 @@
       formEl.addEventListener('submit', (e) => {
         e.preventDefault()
         const zip = zipInput.value
-        const apiKey = '894816c699b8220e363e90a4d4fc5b77'
+        const apiKey = process.env.OPENWEATHER_API_KEY
 
-        getWeather(zip, apiKey)
+        getWeatherByZip(zip, apiKey)
           .then((data) => {
             console.log(data)
             tempEl.innerHTML = data.temp
