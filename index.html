@@ -35,12 +35,7 @@
         font-size: 1em;
         font-weight: bold;
       }
-
-      #name {
-        font-size: 3em;
-        font-weight: bold;
-      }
-
+      
       #form {
         display: flex;
       }
@@ -90,7 +85,7 @@
     </div>
 
     <script type="module">
-      import { getWeatherByZip } from './src/index.js'
+      import { getWeatherByZip, getWeatherByCity, getWeatherByGeo } from './src/index.js'
       // ------------------------------------------------------
       // Developer Code
 
@@ -109,9 +104,9 @@
       formEl.addEventListener('submit', (e) => {
         e.preventDefault()
         const zip = zipInput.value
-        const apiKey = process.env.OPENWEATHER_API_KEY
+        const apiKey = '894816c699b8220e363e90a4d4fc5b77'
 
-        getWeatherByZip(zip, apiKey)
+        getWeatherByZip(apiKey, zip)
           .then((data) => {
             console.log(data)
             tempEl.innerHTML = data.temp

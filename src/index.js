@@ -14,9 +14,7 @@ function getWeatherByGeo(apikey, lat, lon, units = 'imperial') {
     return getWeather(path)
 }
 
-async function getWeather(zip, apiKey, units='imperial') {
-    const path = `https://api.openweathermap.org/data/2.5/weather?zip=${zip}&appid=${apiKey}&units=${units}`
-    
+async function getWeather(path) {
     try {
         // try something here
         const res = await fetch(path)
